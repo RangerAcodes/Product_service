@@ -8,7 +8,7 @@ import java.util.List;
 public interface iProductService {
     List<Product> getAllProducts();
 
-    Product getSingleProduct(Long productId);
+    String getSingleProduct(Long productId);
 
     Product addNewProduct(ProductDto productDto);
 

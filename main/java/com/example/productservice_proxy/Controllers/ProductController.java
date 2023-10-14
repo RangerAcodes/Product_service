@@ -3,6 +3,10 @@ package com.example.productservice_proxy.Controllers;
 
 import com.example.productservice_proxy.DTOs.ProductDto;
 import com.example.productservice_proxy.Models.Product;
+import com.example.productservice_proxy.ProductServiceProxyApplication;
+import com.example.productservice_proxy.services.ProductService;
+import com.example.productservice_proxy.services.iProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 //This controller will always answer products
@@ -10,7 +14,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/products")
 public class ProductController {
 
-    @GetMapping("")
+
+
+    iProductService productService;
+    public ProductController(iProductService productService){
+        this.productService = productService;
+    }
+
+    @GetMapping"")
     public String getAllProducts(){
         return "Getting all the Products";
 
@@ -18,6 +29,7 @@ public class ProductController {
 
     @GetMapping("/{productId}")
     public String getSingleProduct(@PathVariable("productId") Long productId){
+    productService.getSingleProduct(productId);
         return "Returning Single Product with id " + productId;
 
     }

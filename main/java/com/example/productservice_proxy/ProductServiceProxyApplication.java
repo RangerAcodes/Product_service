@@ -9,5 +9,4 @@ public class ProductServiceProxyApplication {
     public static void main(String[] args) {
         SpringApplication.run(ProductServiceProxyApplication.class, args);
     }
-
 }
