@@ -5,10 +5,10 @@ import com.example.productservice_proxy.Models.Product;
 
 import java.util.List;
 
-public interface iProductService {
+public interface IProductService {
     List<Product> getAllProducts();
 
-    String getSingleProduct(Long productId);
+    Product getSingleProduct(Long productId);
 
     Product addNewProduct(ProductDto productDto);
 
