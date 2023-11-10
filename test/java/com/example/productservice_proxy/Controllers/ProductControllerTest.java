@@ -24,7 +24,7 @@ class ProductControllerTest {
     @Test
     void test_whenGetProductIsCalled_ReturnProducts(){
         Product product = new Product();
-        product.setId(2l);
+        product.setId(3l);
         product.setTitle("test");
         when(productService.getSingleProduct(any(Long.class))).thenReturn(product);
         ResponseEntity<Product> productResponseEntity = productController.getSingleProduct(2l);
@@ -36,16 +36,10 @@ class ProductControllerTest {
     @Test
     void test_whenGetProductIsCalled_ReturnException(){
         Product product = new Product();
-        product.setId(2l);
-        product.setTitle("test");
         when(productService.getSingleProduct(any(Long.class))).
                 thenThrow(new RuntimeException("Something is Wrong"));
-        //ResponseEntity<Product> productResponseEntity = productController.getSingleProduct(2l);
+
         assertThrows(RuntimeException.class, () ->
-            productController.getSingleProduct(2l));
-
-        assertEquals();
-
-        //assertEquals("test", productResponseEntity.getBody().getTitle());
+            productController.getSingleProduct(20l));
     }
 }
