@@ -4,6 +4,7 @@ package com.example.productservice_proxy.Controllers;
 import com.example.productservice_proxy.DTOs.ProductDto;
 import com.example.productservice_proxy.Models.Categories;
 import com.example.productservice_proxy.Models.Product;
+import com.example.productservice_proxy.Security.TokenValidator;
 import com.example.productservice_proxy.clients.IClientProductDto;
 import com.example.productservice_proxy.services.IProductService;
 import org.apache.coyote.Response;
@@ -23,9 +24,10 @@ import java.util.List;
 public class ProductController {
 
     IProductService productService;
-
-    public ProductController(IProductService productService) {
+    TokenValidator tokenValidator;
+    public ProductController(IProductService productService, TokenValidator tokenValidator) {
         this.productService = productService;
+        this.tokenValidator = tokenValidator;
     }
 
     @GetMapping("")

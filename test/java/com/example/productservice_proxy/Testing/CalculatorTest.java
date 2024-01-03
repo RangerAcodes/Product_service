@@ -1,5 +1,6 @@
 package com.example.productservice_proxy.Testing;
 
+import com.example.productservice_proxy.Calculator;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

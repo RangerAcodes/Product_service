@@ -7,7 +7,9 @@ import com.example.productservice_proxy.clients.IClientProductDto;
 import com.example.productservice_proxy.clients.fakestore.client.FakeStoreClient;
 import com.example.productservice_proxy.clients.fakestore.dto.FakeStoreProductDto;
 import io.micrometer.common.lang.Nullable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -20,11 +22,14 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Service
+@Primary
+@Service
 public class FakeStoreProductService implements IProductService {
 
     private RestTemplateBuilder restTemplateBuilder;
     private FakeStoreClient fakeStoreClient;
+
+    @Autowired
     public FakeStoreProductService(RestTemplateBuilder restTemplateBuilder, FakeStoreClient fakeStoreClient) {
         this.restTemplateBuilder = restTemplateBuilder;
         this.fakeStoreClient = fakeStoreClient;}

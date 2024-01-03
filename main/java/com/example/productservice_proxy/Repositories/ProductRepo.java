@@ -2,10 +2,12 @@ package com.example.productservice_proxy.Repositories;
 
 import com.example.productservice_proxy.Models.Categories;
 import com.example.productservice_proxy.Models.Product;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long> {
@@ -20,5 +22,8 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 //    List<Product> findByIdIsNotNullOrderByPrice();
 //
 //    List<Product> findAllByIsPublicFalse();
+
+    //List<Product> findAllByTitleequals(String title);
+    List<Product> findByTitleEquals(String title, Pageable pageable);
 
 }

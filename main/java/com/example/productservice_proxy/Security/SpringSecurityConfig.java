@@ -22,9 +22,12 @@ public class SpringSecurityConfig {
 //        http.authorizeHttpRequests((authorize) -> authorize.anyRequest().authenticated())
 //                .formLogin(Customizer.withDefaults());
         http.authorizeHttpRequests((authorize) ->
-                        authorize.requestMatchers("/products").hasAuthority("admin")
-                                .anyRequest().permitAll())
-                .formLogin(Customizer.withDefaults());
+                        authorize.requestMatchers("/*")    //hasAuthority("admin")
+                                //.anyRequest()
+                        .permitAll())
+                .formLogin(Customizer.withDefaults())
+                .cors().disable()
+                .csrf().disable();
         return http.build();
 
     }
