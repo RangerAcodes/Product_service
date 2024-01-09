@@ -1,6 +1,7 @@
 package com.example.productservice_proxy.services;
 
 import com.example.productservice_proxy.Models.Product;
+import com.example.productservice_proxy.Repositories.ProductElasticSearchRepo;
 import com.example.productservice_proxy.Repositories.ProductRepo;
 import com.example.productservice_proxy.clients.IClientProductDto;
 import org.springframework.stereotype.Service;
@@ -10,9 +11,12 @@ import java.util.List;
 //@Service
 public class SelfProductService implements IProductService{
     ProductRepo productRepo;
+    ProductElasticSearchRepo productElasticSearchRepo;
 
-    public SelfProductService(ProductRepo productRepo) {
+
+    public SelfProductService(ProductRepo productRepo, ProductElasticSearchRepo productElasticSearchRepo) {
         this.productRepo = productRepo;
+        this.productElasticSearchRepo = productElasticSearchRepo;
 
     }
     @Override
@@ -28,6 +32,7 @@ public class SelfProductService implements IProductService{
     @Override
     public Product addNewProduct(Product product) {
         this.productRepo.save(product);
+        this.productElasticSearchRepo.save(product);
         return product;
     }
 

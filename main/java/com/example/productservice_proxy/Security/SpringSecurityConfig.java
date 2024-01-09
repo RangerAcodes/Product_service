@@ -22,7 +22,7 @@ public class SpringSecurityConfig {
 //        http.authorizeHttpRequests((authorize) -> authorize.anyRequest().authenticated())
 //                .formLogin(Customizer.withDefaults());
         http.authorizeHttpRequests((authorize) ->
-                        authorize.requestMatchers("/*")    //hasAuthority("admin")
+                        authorize.requestMatchers("/**")    //hasAuthority("admin")
                                 //.anyRequest()
                         .permitAll())
                 .formLogin(Customizer.withDefaults())

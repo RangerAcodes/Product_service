@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Something extends BaseModel{
-private int foo;
-private int boo;
+/*private int foo;
+private int boo;*/
 
 }

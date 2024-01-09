@@ -100,7 +100,7 @@ public class ProductController {
 
     //@ExceptionHandler({NullPointerException.class, IllegalArgumentException.class})
     public ResponseEntity<String> handleException(Exception e) {
-        return new ResponseEntity<>("Kuch toh phat hai", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Kuch toh phata hai", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     private Product getProduct(ProductDto productDto) {

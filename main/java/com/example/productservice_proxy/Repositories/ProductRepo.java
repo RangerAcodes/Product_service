@@ -11,19 +11,17 @@ import java.util.Optional;
 
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long> {
-    Product save(Product product); // (save) is a method of JpaRepository (interface), works as update if provided with id
-//    Product findProductById(Long Id);
-//    Product findByPriceBetween(double greaterthan, double lessthan);
-//
-//    //Product findByProductName(String productName);
-//
-//    // String findTitleById(Long id);
-//
-//    List<Product> findByIdIsNotNullOrderByPrice();
-//
-//    List<Product> findAllByIsPublicFalse();
+    Product save(Product product); // (save) is a method of JpaRepository (interface)
 
-    //List<Product> findAllByTitleequals(String title);
+    Product findProductById(Long Id);
+    Product findByPriceBetween(double greaterthan, double lessthan);
+
+    //Product findByProductName(String productName);
+
+    // String findTitleById(Long id);
+
+    List<Product> findByIdIsNotNullOrderByPrice();
+
+    List<Product> findAllByIsPublicFalse();
     List<Product> findByTitleEquals(String title, Pageable pageable);
-
 }

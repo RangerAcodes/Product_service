@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CategoryRepo extends JpaRepository<Categories, Long> {
-     Categories save(Categories category); // (save) is a method of JpaRepository (interface)
+    Categories save(Categories categories);
+
     Categories findById(long id);
 
-    @Query("SELECT c.name FROM Categories c WHERE c.id = :id")
-    String findCategoryNameById(@Param("id") Long id);
+    @Query(value = "SELECT c.name FROM Categories c WHERE c.id = :id")
+    String findCategoryNameById(@Param("id") long id);
 
-//    @Query(value = "SELECT c.name FROM Categories c WHERE c.id = :?1")
-//    String findCategoryByIdV1(long id);
-
-    }
+    @Query(value = "SELECT c.name FROM Categories c WHERE c.id = ?1")
+    String findCategoryNameByIdV1(long id);
+}
