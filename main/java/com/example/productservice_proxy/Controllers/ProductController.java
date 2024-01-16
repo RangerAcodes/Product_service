@@ -8,6 +8,8 @@ import com.example.productservice_proxy.Security.TokenValidator;
 import com.example.productservice_proxy.clients.IClientProductDto;
 import com.example.productservice_proxy.services.IProductService;
 import org.apache.coyote.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,8 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
+    Logger logger = LoggerFactory.getLogger(ProductController.class);
+
     IProductService productService;
     TokenValidator tokenValidator;
     public ProductController(IProductService productService, TokenValidator tokenValidator) {
@@ -32,6 +36,7 @@ public class ProductController {
 
     @GetMapping("")
     public ResponseEntity<List<Product>> getAllProducts() {
+        logger.error("This is an error message");
         return new ResponseEntity<>(this.productService.getAllProducts(), HttpStatus.OK);
     }
 

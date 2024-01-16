@@ -9,9 +9,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProductElasticSearchRepo extends ElasticsearchRepository<Product, Long> {
+public interface ProductElasticSearchRepository extends ElasticsearchRepository<Product, Long> {
 
     Iterable<Product> findAllByTitleEquals(String title);
+
     @Query("{\n" +
             "  \"query\": {\n" +
             "    \"match\": {\n" +
@@ -21,3 +22,4 @@ public interface ProductElasticSearchRepo extends ElasticsearchRepository<Produc
             "}")
     List<Product> findAllByTitleContaining(String query);
 }
+

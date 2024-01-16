@@ -8,15 +8,11 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
-class ProductRepoTest {
+class ProductRepositoryTest {
 
     @Autowired
-    private ProductRepo productRepo;
+    private ProductRepository productRepository;
     @Autowired
     private CategoryRepo categoryRepo;
 
@@ -32,7 +28,7 @@ class ProductRepoTest {
         product.setTitle("Laptop");
         product.setDescription("Laptop");
         product.setCategory(categories);
-        productRepo.save(product);
+        productRepository.save(product);
 
 //        Categories categories1 = categoryRepo.findById(1);
 //        List<Product> productList = categories1.getProductList();
@@ -51,7 +47,7 @@ class ProductRepoTest {
         product.setTitle("Tshirt");
         product.setDescription("Tshirt");
         product.setCategory(categories);
-        productRepo.save(product);
+        productRepository.save(product);
 
         //Categories categories1 = categoryRepo.findById(categories.getId()).get();
         //List<Product> productList = categories1.getProductList();

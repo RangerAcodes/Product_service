@@ -2,21 +2,22 @@ package com.example.productservice_proxy.services;
 
 import com.example.productservice_proxy.Models.Product;
 import com.example.productservice_proxy.Models.SortParam;
-import com.example.productservice_proxy.Repositories.ProductRepo;
+import com.example.productservice_proxy.Repositories.ProductElasticSearchRepository;
+import com.example.productservice_proxy.Repositories.ProductRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SearchService {
 
-    private ProductRepo productRepo;
+    private ProductRepository productRepository;
+    private ProductElasticSearchRepository productElasticSearchRepo;
 
-    public SearchService(ProductRepo productRepo) {
-        this.productRepo = productRepo;
+    public SearchService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
     public List<Product> searchProducts(String query, int pageNumber, int sizeOfPage,
@@ -40,6 +41,6 @@ public class SearchService {
             }
         }
 
-        return productRepo.findByTitleEquals(query, PageRequest.of(pageNumber, sizeOfPage, sort));
+        return productRepository.findByTitleEquals(query, PageRequest.of(pageNumber, sizeOfPage, sort));
     }
 }
