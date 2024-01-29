@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/ExceptionAdvices.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/ExceptionAdvices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Repositories/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Repositories/ProductSearchRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Repositories/ProductElasticSearchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/config/ElasticsearchConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/SearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/SelfProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/SelfProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src" beforeDir="false" afterPath="$PROJECT_DIR$/src" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,15 +37,15 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2bdQfcg3r1Y573O2rqDtzCzIBOU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -69,24 +54,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="ProductServiceProxyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="ProductService_proxy" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.productservice_proxy.ProductServiceProxyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -119,6 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706542583643</updated>
       <workItem from="1706542590865" duration="958000" />
+      <workItem from="1706546460293" duration="46000" />
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
