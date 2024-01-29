@@ -2,11 +2,8 @@ package com.example.productservice_proxy.services;
 
 import com.example.productservice_proxy.Models.Product;
 import com.example.productservice_proxy.Models.SortParam;
-import com.example.productservice_proxy.Repositories.ProductRepo;
-//import com.example.productservice_proxy.Repositories.ProductSearchRepo;
-//import com.example.productservice_proxy.Repositories.ProductRepository;
-import com.example.productservice_proxy.Repositories.ProductSearchRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.productservice_proxy.Repositories.ProductElasticSearchRepository;
+import com.example.productservice_proxy.Repositories.ProductRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -16,13 +13,11 @@ import java.util.List;
 @Service
 public class SearchService {
 
-    private ProductRepo productRepo;
+    private ProductRepository productRepository;
+    private ProductElasticSearchRepository productElasticSearchRepo;
 
-    private ProductSearchRepo productSearchRepo;
-
-    public SearchService(ProductRepo productRepo, ProductSearchRepo productSearchRepo) {
-        this.productRepo = productRepo;
-        this.productSearchRepo = productSearchRepo;
+    public SearchService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
     public List<Product> searchProducts(String query, int pageNumber, int sizeOfPage,
@@ -46,9 +41,6 @@ public class SearchService {
             }
         }
 
-        //return productRepo.findByTitleEquals(query, PageRequest.of(pageNumber, sizeOfPage, sort));
-
-        return productSearchRepo.findAllByTitleContaining(query);
-
+        return productRepository.findByTitleEquals(query, PageRequest.of(pageNumber, sizeOfPage, sort));
     }
 }

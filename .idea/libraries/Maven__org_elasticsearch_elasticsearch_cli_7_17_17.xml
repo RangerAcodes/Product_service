@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: org.elasticsearch:elasticsearch-cli:7.17.17" type="java-imported" external-system-id="Maven">
+    <properties groupId="org.elasticsearch" artifactId="elasticsearch-cli" version="7.17.17" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch-cli/7.17.17/elasticsearch-cli-7.17.17.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch-cli/7.17.17/elasticsearch-cli-7.17.17-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch-cli/7.17.17/elasticsearch-cli-7.17.17-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

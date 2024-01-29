@@ -5,7 +5,6 @@ import com.example.productservice_proxy.DTOs.SearchRequestDto;
 import com.example.productservice_proxy.Models.Categories;
 import com.example.productservice_proxy.Models.Product;
 import com.example.productservice_proxy.services.SearchService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.SearchStrategy;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/search")
 public class SearchController {
+
     SearchService searchService;
 
     public SearchController (SearchService searchService){
@@ -41,4 +41,6 @@ public class SearchController {
         product.setPrice(p.getPrice());
         return product;
     }
+
 }
+

@@ -10,7 +10,6 @@ import com.example.productservice_proxy.services.IProductService;
 import org.apache.coyote.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,9 +28,7 @@ public class ProductController {
     Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     IProductService productService;
-
     TokenValidator tokenValidator;
-
     public ProductController(IProductService productService, TokenValidator tokenValidator) {
         this.productService = productService;
         this.tokenValidator = tokenValidator;
@@ -108,7 +105,7 @@ public class ProductController {
 
     //@ExceptionHandler({NullPointerException.class, IllegalArgumentException.class})
     public ResponseEntity<String> handleException(Exception e) {
-        return new ResponseEntity<>("Something went south, need to check", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Kuch toh phata hai", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     private Product getProduct(ProductDto productDto) {

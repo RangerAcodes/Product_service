@@ -1,0 +1,415 @@
+Index: main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.jpa.hibernate.ddl-auto=update\nspring.datasource.url=jdbc:sqlserver://localhost;databaseName=ProductServiceProxy\nspring.datasource.username=sa\nspring.datasource.password=Valuetech@123\nspring.jpa.database-platform=org.hibernate.dialect.SQLServerDialect\nspring.jpa.show-sql=true\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServerDialect\nspring.flyway.baseline-on-migrate = true\nspring.flyway.baseline-version = 0\n#logging.level.org.springframework.security=trace\nspring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:9000\nopensearch.uris=https://search-mytestdomain-abfx7sx5onigtcjffsis5vwvf4.us-east-1.es.amazonaws.com\nspring.main.allow-bean-definition-overriding=true\nlogging.level.org.springframework.data.elasticsearch=DEBUG\nlogging.level.org.elasticsearch=DEBUG\n\neureka.client.register-with-eureka=true\neureka.client.fetch-registry=true\nspring.application.name=productservice\neureka.client.service-url.default-zone=http://localhost:8761/eureka\n\n\n\n\n#spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver\n#spring.datasource.url=jdbc:mysql://database-1.c2iethulvnt9.us-east-1.rds.amazonaws.com\n#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/main/resources/application.properties b/main/resources/application.properties
+--- a/main/resources/application.properties	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/resources/application.properties	(date 1706543489792)
+@@ -7,17 +7,12 @@
+ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServerDialect
+ spring.flyway.baseline-on-migrate = true
+ spring.flyway.baseline-version = 0
+-#logging.level.org.springframework.security=trace
++logging.level.org.springframework.security=trace
+ spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:9000
+-opensearch.uris=https://search-mytestdomain-abfx7sx5onigtcjffsis5vwvf4.us-east-1.es.amazonaws.com
+-spring.main.allow-bean-definition-overriding=true
+-logging.level.org.springframework.data.elasticsearch=DEBUG
+-logging.level.org.elasticsearch=DEBUG
++opensearch.uris=https://search-testadit-dtgux6dwp5xouy2c3bx7gbe34i.us-east-1.es.amazonaws.com
++
+ 
+-eureka.client.register-with-eureka=true
+-eureka.client.fetch-registry=true
+-spring.application.name=productservice
+-eureka.client.service-url.default-zone=http://localhost:8761/eureka
++
+ 
+ 
+ 
+Index: main/java/com/example/productservice_proxy/services/FakeStoreProductService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.productservice_proxy.services;\n\nimport com.example.productservice_proxy.DTOs.ProductDto;\nimport com.example.productservice_proxy.Models.Categories;\nimport com.example.productservice_proxy.Models.Product;\nimport com.example.productservice_proxy.clients.IClientProductDto;\nimport com.example.productservice_proxy.clients.fakestore.client.FakeStoreClient;\nimport com.example.productservice_proxy.clients.fakestore.dto.FakeStoreProductDto;\nimport io.micrometer.common.lang.Nullable;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.web.client.RestTemplateBuilder;\nimport org.springframework.context.annotation.Primary;\nimport org.springframework.http.HttpMethod;\nimport org.springframework.http.ResponseEntity;\nimport org.springframework.http.client.HttpComponentsClientHttpRequestFactory;\nimport org.springframework.stereotype.Service;\nimport org.springframework.web.client.RequestCallback;\nimport org.springframework.web.client.ResponseExtractor;\nimport org.springframework.web.client.RestClientException;\nimport org.springframework.web.client.RestTemplate;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n@Primary\n@Service\npublic class FakeStoreProductService implements IProductService {\n\n    private RestTemplateBuilder restTemplateBuilder;\n    private FakeStoreClient fakeStoreClient;\n\n    @Autowired\n    public FakeStoreProductService(RestTemplateBuilder restTemplateBuilder, FakeStoreClient fakeStoreClient) {\n        this.restTemplateBuilder = restTemplateBuilder;\n        this.fakeStoreClient = fakeStoreClient;}\n\n    private <T> ResponseEntity<T> requestForEntity(HttpMethod httpMethod, String url, @Nullable Object request,\n                                                   Class<T> responseType, Object... uriVariables) throws RestClientException {\n        RestTemplate restTemplate = restTemplateBuilder.requestFactory(\n                HttpComponentsClientHttpRequestFactory.class\n        ).build();\n        RequestCallback requestCallback =restTemplate.httpEntityCallback(request, responseType);\n        ResponseExtractor<ResponseEntity<T>> responseExtractor = restTemplate.responseEntityExtractor(responseType);\n        return restTemplate.execute(url, httpMethod, requestCallback, responseExtractor, uriVariables);\n    }\n\n\n    @Override\n    public List<Product> getAllProducts() {\n\n//        RestTemplate restTemplate = restTemplateBuilder.build();\n//        ResponseEntity<ProductDto[]> productDtos = restTemplate.getForEntity(\"https://fakestoreapi.com/products\", ProductDto[].class);\n        \n        List<FakeStoreProductDto> fakeStoreProductDtos = fakeStoreClient.getAllProducts();\n        List<Product> answer = new ArrayList<>();\n\n        for (FakeStoreProductDto productDto: fakeStoreProductDtos) {\n            Product product = new Product();\n            product.setId(productDto.getId());\n            product.setTitle(productDto.getTitle());\n            product.setPrice(productDto.getPrice());\n            Categories category = new Categories();\n            category.setName(productDto.getCategory());\n            product.setCategory(category);\n            product.setImageUrl(productDto.getImage());\n            answer.add(product);\n        }\n        return answer;\n    }\n\n\n    @Override\n    public Product getSingleProduct(Long productId) {\n        RestTemplate restTemplate = restTemplateBuilder.build();\n        ResponseEntity<FakeStoreProductDto> productDto =\n                restTemplate.getForEntity(\"https://fakestoreapi.com/products/{id}\",\n                        FakeStoreProductDto.class, productId);\n\n        Product product = getProduct(productDto.getBody());\n\n        return product;\n    }\n\n//    @Override\n//    public Product addNewProduct(IClientProductDto productDto) {\n//        RestTemplate restTemplate = restTemplateBuilder.build();\n//        restTemplate.postForEntity(\"https://fakestoreapi.com/products\",productDto,ProductDto.class);\n//\n//        //saving data for db\n//\n//        Product product = getProduct((FakeStoreProductDto) productDto);\n//        return product;\n//\n//        //return null;\n//    }\n\n    @Override\n    public Product addNewProduct(Product product){\n        return null;\n    }\n\n    @Override\n    public Product updateProduct(Long productId, Product product) {\n        RestTemplate restTemplate = restTemplateBuilder.build();\n\n        FakeStoreProductDto fakeStoreProductDto = new FakeStoreProductDto();\n        fakeStoreProductDto.setDescription(product.getDescription());\n        fakeStoreProductDto.setImage(product.getImageUrl());\n        fakeStoreProductDto.setPrice(product.getPrice());\n        fakeStoreProductDto.setTitle(product.getTitle());\n        fakeStoreProductDto.setCategory(product.getCategory().getName());\n\n        ResponseEntity<FakeStoreProductDto> fakeStoreProductDtoResponseEntity\n                = requestForEntity(\n                HttpMethod.PATCH,\n                \"https://fakestoreapi.com/products/{id}\",\n                fakeStoreProductDto,\n                FakeStoreProductDto.class,\n                productId\n        );\n\n        FakeStoreProductDto fakeStoreProductDto1 = fakeStoreProductDtoResponseEntity.getBody();\n        return getProduct(fakeStoreProductDto1);\n    }\n\n    @Override\n    public String deleteProduct(Long productId) {\n        return null;\n    }\n\n    private Product getProduct(FakeStoreProductDto productDto) {\n        Product product = new Product();\n        product.setId(productDto.getId());\n        product.setTitle(productDto.getTitle());\n        product.setPrice(productDto.getPrice());\n        Categories category = new Categories();\n        category.setName(productDto.getCategory());\n        product.setCategory(category);\n        product.setImageUrl(productDto.getImage());\n        product.setDescription(productDto.getDescription());\n        return product;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java b/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java
+--- a/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java	(date 1706543489790)
+@@ -22,8 +22,8 @@
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+-@Primary
+-@Service
++//@Primary
++//@Service
+ public class FakeStoreProductService implements IProductService {
+ 
+     private RestTemplateBuilder restTemplateBuilder;
+Index: main/java/com/example/productservice_proxy/config/ElasticsearchConfig.java
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/config/ElasticsearchConfig.java b/main/java/com/example/productservice_proxy/config/ElasticsearchConfig.java
+deleted file mode 100644
+--- a/main/java/com/example/productservice_proxy/config/ElasticsearchConfig.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ /dev/null	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
+@@ -1,20 +0,0 @@
+-package com.example.productservice_proxy.config;
+-
+-import com.example.productservice_proxy.Repositories.ProductSearchRepo;
+-import org.opensearch.client.RestHighLevelClient;
+-import org.springframework.context.annotation.Bean;
+-import org.springframework.context.annotation.Configuration;
+-//import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
+-import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
+-import org.springframework.data.elasticsearch.client.ClientConfiguration;
+-//import org.springframework.data.elasticsearch.client.RestClients;
+-import org.springframework.data.elasticsearch.repository.config.EnableReactiveElasticsearchRepositories;
+-import org.springframework.data.elasticsearch.repository.config.EnableReactiveElasticsearchRepositories;
+-
+-//
+-//@Configuration
+-//@EnableElasticsearchRepositories(basePackages = "com.example.productservice_proxy.Repositories")
+-//public class ElasticsearchConfig {
+-//
+-//}
+-//
+Index: test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.productservice_proxy.Repositories;\n\nimport com.example.productservice_proxy.Models.Categories;\nimport com.example.productservice_proxy.Models.Product;\nimport jakarta.transaction.Transactional;\nimport org.junit.jupiter.api.Test;\nimport org.springframework.test.annotation.Rollback;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.test.context.SpringBootTest;\n\n@SpringBootTest\nclass ProductRepositoryTest {\n\n    @Autowired\n    private ProductRepo productRepository;\n    @Autowired\n    private CategoryRepo categoryRepo;\n\n    @Test\n    @Transactional\n    void saveProductaAndCategories() {\n        Categories categories = new Categories();\n        categories.setName(\"Electronics\");\n        categories.setDescription(\"Electronics - Testing\");\n        categories = categoryRepo.save(categories);\n\n        Product product = new Product();\n        product.setTitle(\"Laptop\");\n        product.setDescription(\"Laptop\");\n        product.setCategory(categories);\n        productRepository.save(product);\n\n//        Categories categories1 = categoryRepo.findById(1);\n//        List<Product> productList = categories1.getProductList();\n        System.out.println(\"Debugging - Adit\");\n\n    }\n    @Test\n        //@Transactional\n    void saveProductsAndCategory2() {\n        Categories categories = new Categories();\n        categories.setName(\"Fashion\");\n        categories.setDescription(\"Fashion\");\n        //categories = categoryRepo.save(categories);\n\n        Product product = new Product();\n        product.setTitle(\"Tshirt\");\n        product.setDescription(\"Tshirt\");\n        product.setCategory(categories);\n        productRepository.save(product);\n\n        //Categories categories1 = categoryRepo.findById(categories.getId()).get();\n        //List<Product> productList = categories1.getProductList();\n        System.out.println(\"Debug\");\n\n    }\n\n    @Test\n    @Transactional\n    @Rollback(value = false)\n    void saveProductsAndCategory3() {\n        Categories category = categoryRepo.findById(2L);\n\n//        Product product = new Product();\n//\n//        product.setPrice(1012);\n//        product.setImageUrl(\"hiii\");\n//        product.setCategory(category);\n//        Product savedProduct = productRepo.save(product);\n//\n//        product = new Product();\n//        product.setPrice(103);\n//        product.setImageUrl(\"hiii\");\n//        product.setCategory(category);\n//        productRepo.save(product);\n\n\n\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java b/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java
+--- a/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java	(date 1706543489810)
+@@ -12,7 +12,7 @@
+ class ProductRepositoryTest {
+ 
+     @Autowired
+-    private ProductRepo productRepository;
++    private ProductRepository productRepository;
+     @Autowired
+     private CategoryRepo categoryRepo;
+ 
+Index: main/java/com/example/productservice_proxy/Repositories/ProductSearchRepo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/Repositories/ProductSearchRepo.java b/main/java/com/example/productservice_proxy/Repositories/ProductElasticSearchRepository.java
+rename from main/java/com/example/productservice_proxy/Repositories/ProductSearchRepo.java
+rename to main/java/com/example/productservice_proxy/Repositories/ProductElasticSearchRepository.java
+--- a/main/java/com/example/productservice_proxy/Repositories/ProductSearchRepo.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/Repositories/ProductElasticSearchRepository.java	(date 1706543489788)
+@@ -1,6 +1,7 @@
+ package com.example.productservice_proxy.Repositories;
+ 
+ import com.example.productservice_proxy.Models.Product;
++import org.springframework.data.domain.Sort;
+ import org.springframework.data.elasticsearch.annotations.Query;
+ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+ import org.springframework.stereotype.Repository;
+@@ -8,17 +9,17 @@
+ import java.util.List;
+ 
+ @Repository
+-public interface ProductSearchRepo extends ElasticsearchRepository<Product, Long> {
++public interface ProductElasticSearchRepository extends ElasticsearchRepository<Product, Long> {
+ 
+     Iterable<Product> findAllByTitleEquals(String title);
+ 
+     @Query("{\n" +
+             "  \"query\": {\n" +
+             "    \"match\": {\n" +
+-            "      \"title\": \"?0\"\n" + // Assuming 'title' is a field in your OpenSearch index
++            "      \"FIELD\": \"TEXT\"\n" +
+             "    }\n" +
+             "  }\n" +
+             "}")
+     List<Product> findAllByTitleContaining(String query);
+-    //void deleteProductById(Long id);
+ }
++
+Index: main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.productservice_proxy;\n\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\nimport org.springframework.boot.web.client.RestTemplateBuilder;\nimport org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.ComponentScan;\nimport org.springframework.context.annotation.Configuration;\nimport org.springframework.http.HttpMethod;\nimport org.springframework.http.client.HttpComponentsClientHttpRequestFactory;\n\n@SpringBootApplication\npublic class ProductServiceProxyApplication {\n\n    public static void main(String[] args) {\n        SpringApplication.run(ProductServiceProxyApplication.class, args);\n\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java b/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java
+--- a/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java	(date 1706543489787)
+@@ -4,7 +4,6 @@
+ import org.springframework.boot.autoconfigure.SpringBootApplication;
+ import org.springframework.boot.web.client.RestTemplateBuilder;
+ import org.springframework.context.annotation.Bean;
+-import org.springframework.context.annotation.ComponentScan;
+ import org.springframework.context.annotation.Configuration;
+ import org.springframework.http.HttpMethod;
+ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+@@ -16,5 +15,19 @@
+         SpringApplication.run(ProductServiceProxyApplication.class, args);
+ 
+ 
++
++        @Configuration
++        class RestTemplateConfig {
++            @Bean
++            public RestTemplateBuilder restTemplateBuilder() {
++                return new RestTemplateBuilder().requestFactory(HttpComponentsClientHttpRequestFactory.class);
++            }
++
++            @Bean
++            public HttpMethod patch() {
++                return HttpMethod.PATCH;
++            }
++        }
++
+     }
+ }
+Index: main/java/com/example/productservice_proxy/Controllers/ExceptionAdvices.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.productservice_proxy.Controllers;\n\nimport org.springframework.http.HttpStatus;\nimport org.springframework.http.ResponseEntity;\nimport org.springframework.web.bind.annotation.ControllerAdvice;\nimport org.springframework.web.bind.annotation.ExceptionHandler;\n\n//@ControllerAdvice\npublic class ExceptionAdvices {\n    @ExceptionHandler({Exception.class})\n    public ResponseEntity<String> handleException(Exception e){\n        return new ResponseEntity<>(\"Something went wrong - Adit\", HttpStatus.INTERNAL_SERVER_ERROR);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/Controllers/ExceptionAdvices.java b/main/java/com/example/productservice_proxy/Controllers/ExceptionAdvices.java
+--- a/main/java/com/example/productservice_proxy/Controllers/ExceptionAdvices.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/Controllers/ExceptionAdvices.java	(date 1706543489785)
+@@ -5,7 +5,7 @@
+ import org.springframework.web.bind.annotation.ControllerAdvice;
+ import org.springframework.web.bind.annotation.ExceptionHandler;
+ 
+-//@ControllerAdvice
++@ControllerAdvice
+ public class ExceptionAdvices {
+     @ExceptionHandler({Exception.class})
+     public ResponseEntity<String> handleException(Exception e){
+Index: main/java/com/example/productservice_proxy/Repositories/ProductRepo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java b/main/java/com/example/productservice_proxy/Repositories/ProductRepository.java
+rename from main/java/com/example/productservice_proxy/Repositories/ProductRepo.java
+rename to main/java/com/example/productservice_proxy/Repositories/ProductRepository.java
+--- a/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/Repositories/ProductRepository.java	(date 1706543489788)
+@@ -8,7 +8,7 @@
+ import java.util.List;
+ 
+ @Repository
+-public interface ProductRepo extends JpaRepository<Product, Long> {
++public interface ProductRepository extends JpaRepository<Product, Long> {
+     Product save(Product product); // (save) is a method of JpaRepository (interface)
+ 
+     Product findProductById(Long Id);
+@@ -22,8 +22,4 @@
+ 
+     List<Product> findAllByIsPublicFalse();
+     List<Product> findByTitleEquals(String title, Pageable pageable);
+-
+-    //void deleteProductById(Long id);
+-}
+-
+-
++}
+\ No newline at end of file
+Index: main/java/com/example/productservice_proxy/services/SearchService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.productservice_proxy.services;\n\nimport com.example.productservice_proxy.Models.Product;\nimport com.example.productservice_proxy.Models.SortParam;\nimport com.example.productservice_proxy.Repositories.ProductRepo;\n//import com.example.productservice_proxy.Repositories.ProductSearchRepo;\n//import com.example.productservice_proxy.Repositories.ProductRepository;\nimport com.example.productservice_proxy.Repositories.ProductSearchRepo;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.data.domain.PageRequest;\nimport org.springframework.data.domain.Sort;\nimport org.springframework.stereotype.Service;\n\nimport java.util.List;\n\n@Service\npublic class SearchService {\n\n    private ProductRepo productRepo;\n\n    private ProductSearchRepo productSearchRepo;\n\n    public SearchService(ProductRepo productRepo, ProductSearchRepo productSearchRepo) {\n        this.productRepo = productRepo;\n        this.productSearchRepo = productSearchRepo;\n    }\n\n    public List<Product> searchProducts(String query, int pageNumber, int sizeOfPage,\n                                        List<SortParam> sortParamList) {\n//        Sort sort = Sort.by(\"title\").descending()\n//                .and(Sort.by(\"price\").descending());\n\n        Sort sort;\n        if(sortParamList.get(0).getSortType().equals(\"ASC\")) {\n            sort = Sort.by(sortParamList.get(0).getParamName());\n        } else {\n            sort = Sort.by(sortParamList.get(0).getParamName()).descending();\n        }\n\n        for(int i = 1; i< sortParamList.size(); i++) {\n            if(sortParamList.get(i).getSortType().equals(\"ASC\")) {\n                sort = sort.and(Sort.by(sortParamList.get(i).getParamName()));\n            } else {\n                sort = sort.and(Sort.by(sortParamList.get(i).getParamName())\n                        .descending());\n            }\n        }\n\n        //return productRepo.findByTitleEquals(query, PageRequest.of(pageNumber, sizeOfPage, sort));\n\n        return productSearchRepo.findAllByTitleContaining(query);\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/services/SearchService.java b/main/java/com/example/productservice_proxy/services/SearchService.java
+--- a/main/java/com/example/productservice_proxy/services/SearchService.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/services/SearchService.java	(date 1706543489790)
+@@ -2,11 +2,8 @@
+ 
+ import com.example.productservice_proxy.Models.Product;
+ import com.example.productservice_proxy.Models.SortParam;
+-import com.example.productservice_proxy.Repositories.ProductRepo;
+-//import com.example.productservice_proxy.Repositories.ProductSearchRepo;
+-//import com.example.productservice_proxy.Repositories.ProductRepository;
+-import com.example.productservice_proxy.Repositories.ProductSearchRepo;
+-import org.springframework.beans.factory.annotation.Autowired;
++import com.example.productservice_proxy.Repositories.ProductElasticSearchRepository;
++import com.example.productservice_proxy.Repositories.ProductRepository;
+ import org.springframework.data.domain.PageRequest;
+ import org.springframework.data.domain.Sort;
+ import org.springframework.stereotype.Service;
+@@ -16,13 +13,11 @@
+ @Service
+ public class SearchService {
+ 
+-    private ProductRepo productRepo;
++    private ProductRepository productRepository;
++    private ProductElasticSearchRepository productElasticSearchRepo;
+ 
+-    private ProductSearchRepo productSearchRepo;
+-
+-    public SearchService(ProductRepo productRepo, ProductSearchRepo productSearchRepo) {
+-        this.productRepo = productRepo;
+-        this.productSearchRepo = productSearchRepo;
++    public SearchService(ProductRepository productRepository) {
++        this.productRepository = productRepository;
+     }
+ 
+     public List<Product> searchProducts(String query, int pageNumber, int sizeOfPage,
+@@ -46,9 +41,6 @@
+             }
+         }
+ 
+-        //return productRepo.findByTitleEquals(query, PageRequest.of(pageNumber, sizeOfPage, sort));
+-
+-        return productSearchRepo.findAllByTitleContaining(query);
+-
++        return productRepository.findByTitleEquals(query, PageRequest.of(pageNumber, sizeOfPage, sort));
+     }
+ }
+Index: main/java/com/example/productservice_proxy/services/SelfProductService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.productservice_proxy.services;\n\nimport com.example.productservice_proxy.Models.Product;\nimport com.example.productservice_proxy.Repositories.ProductSearchRepo;\nimport com.example.productservice_proxy.Repositories.ProductRepo;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.context.annotation.Primary;\nimport org.springframework.stereotype.Service;\n\nimport java.util.List;\n\n//@Primary\n//@Service\npublic class SelfProductService implements IProductService{\n\n    ProductRepo productRepo;\n    ProductSearchRepo productElasticSearchRepo;\n\n\n    public SelfProductService(ProductRepo productRepo, ProductSearchRepo productElasticSearchRepo\n        )\n\n        {\n        this.productRepo = productRepo;\n        this.productElasticSearchRepo = productElasticSearchRepo;\n\n    }\n    @Override\n    public List<Product> getAllProducts() {\n        return productRepo.findAll();\n    }\n\n    @Override\n    public Product getSingleProduct(Long productId) {\n        return null;\n    }\n\n    @Override\n    public Product addNewProduct(Product product) {\n        this.productRepo.save(product);\n        this.productElasticSearchRepo.save(product);\n        return product;\n    }\n\n    @Override\n    public Product updateProduct(Long productId, Product product) {\n        return null;\n    }\n\n    @Override\n    public String deleteProduct(Long productId) {\n        return null;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/services/SelfProductService.java b/main/java/com/example/productservice_proxy/services/SelfProductService.java
+--- a/main/java/com/example/productservice_proxy/services/SelfProductService.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/services/SelfProductService.java	(date 1706543489791)
+@@ -1,33 +1,28 @@
+ package com.example.productservice_proxy.services;
+ 
+ import com.example.productservice_proxy.Models.Product;
+-import com.example.productservice_proxy.Repositories.ProductSearchRepo;
+-import com.example.productservice_proxy.Repositories.ProductRepo;
+-import org.springframework.beans.factory.annotation.Autowired;
++import com.example.productservice_proxy.Repositories.ProductElasticSearchRepository;
++import com.example.productservice_proxy.Repositories.ProductRepository;
+ import org.springframework.context.annotation.Primary;
+ import org.springframework.stereotype.Service;
+ 
+ import java.util.List;
+ 
+-//@Primary
+-//@Service
++@Primary
++@Service
+ public class SelfProductService implements IProductService{
+-
+-    ProductRepo productRepo;
+-    ProductSearchRepo productElasticSearchRepo;
++    ProductRepository productRepository;
++    ProductElasticSearchRepository productElasticSearchRepository;
+ 
+ 
+-    public SelfProductService(ProductRepo productRepo, ProductSearchRepo productElasticSearchRepo
+-        )
+-
+-        {
+-        this.productRepo = productRepo;
+-        this.productElasticSearchRepo = productElasticSearchRepo;
++    public SelfProductService(ProductRepository productRepository, ProductElasticSearchRepository productElasticSearchRepository) {
++        this.productRepository = productRepository;
++        this.productElasticSearchRepository = productElasticSearchRepository;
+ 
+     }
+     @Override
+     public List<Product> getAllProducts() {
+-        return productRepo.findAll();
++        return productRepository.findAll();
+     }
+ 
+     @Override
+@@ -37,8 +32,8 @@
+ 
+     @Override
+     public Product addNewProduct(Product product) {
+-        this.productRepo.save(product);
+-        this.productElasticSearchRepo.save(product);
++        this.productRepository.save(product);
++        this.productElasticSearchRepository.save(product);
+         return product;
+     }
+ 
+Index: main/java/com/example/productservice_proxy/Controllers/SearchController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.productservice_proxy.Controllers;\n\nimport com.example.productservice_proxy.DTOs.ProductDto;\nimport com.example.productservice_proxy.DTOs.SearchRequestDto;\nimport com.example.productservice_proxy.Models.Categories;\nimport com.example.productservice_proxy.Models.Product;\nimport com.example.productservice_proxy.services.SearchService;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.autoconfigure.condition.SearchStrategy;\nimport org.springframework.web.bind.annotation.PostMapping;\nimport org.springframework.web.bind.annotation.RequestBody;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RestController;\n\nimport java.util.LinkedList;\nimport java.util.List;\n\n@RestController\n@RequestMapping(\"/search\")\npublic class SearchController {\n    SearchService searchService;\n\n    public SearchController (SearchService searchService){\n        this.searchService = searchService;\n    }\n\n    @PostMapping\n    public List<ProductDto> searchProducts(@RequestBody SearchRequestDto searchRequestDto){\n        List<Product> result = searchService.searchProducts(searchRequestDto.getQuery(),\n                searchRequestDto.getPageNumber(),searchRequestDto.getSizeOfPage(), searchRequestDto.getSortParamList());\n        List<ProductDto> shareableResult = new LinkedList<>();\n        for(Product product: result){\n            shareableResult.add(getProduct(product));\n        }\n        return shareableResult;\n    }\n    private ProductDto getProduct(Product p) {\n        ProductDto product = new ProductDto();\n        product.setId(p.getId());\n        product.setTitle(p.getTitle());\n        product.setPrice(p.getPrice());\n        return product;\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/Controllers/SearchController.java b/main/java/com/example/productservice_proxy/Controllers/SearchController.java
+--- a/main/java/com/example/productservice_proxy/Controllers/SearchController.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/Controllers/SearchController.java	(date 1706543489787)
+@@ -5,7 +5,6 @@
+ import com.example.productservice_proxy.Models.Categories;
+ import com.example.productservice_proxy.Models.Product;
+ import com.example.productservice_proxy.services.SearchService;
+-import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.boot.autoconfigure.condition.SearchStrategy;
+ import org.springframework.web.bind.annotation.PostMapping;
+ import org.springframework.web.bind.annotation.RequestBody;
+@@ -18,6 +17,7 @@
+ @RestController
+ @RequestMapping("/search")
+ public class SearchController {
++
+     SearchService searchService;
+ 
+     public SearchController (SearchService searchService){
+@@ -41,4 +41,6 @@
+         product.setPrice(p.getPrice());
+         return product;
+     }
+-}
+\ No newline at end of file
++
++}
++
+Index: main/java/com/example/productservice_proxy/Controllers/ProductController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.productservice_proxy.Controllers;\n\n\nimport com.example.productservice_proxy.DTOs.ProductDto;\nimport com.example.productservice_proxy.Models.Categories;\nimport com.example.productservice_proxy.Models.Product;\nimport com.example.productservice_proxy.Security.TokenValidator;\nimport com.example.productservice_proxy.clients.IClientProductDto;\nimport com.example.productservice_proxy.services.IProductService;\nimport org.apache.coyote.Response;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.beans.factory.annotation.Qualifier;\nimport org.springframework.http.HttpStatus;\nimport org.springframework.http.ResponseEntity;\nimport org.springframework.util.LinkedMultiValueMap;\nimport org.springframework.util.MultiValueMap;\nimport org.springframework.web.bind.annotation.*;\n\nimport java.util.List;\n\n//This controller will always answer products\n// This controller will always answer products\n@RestController\n@RequestMapping(\"/products\")\npublic class ProductController {\n\n    Logger logger = LoggerFactory.getLogger(ProductController.class);\n\n    IProductService productService;\n\n    TokenValidator tokenValidator;\n\n    public ProductController(IProductService productService, TokenValidator tokenValidator) {\n        this.productService = productService;\n        this.tokenValidator = tokenValidator;\n    }\n\n    @GetMapping(\"\")\n    public ResponseEntity<List<Product>> getAllProducts() {\n        logger.error(\"This is an error message\");\n        return new ResponseEntity<>(this.productService.getAllProducts(), HttpStatus.OK);\n    }\n\n\n    @GetMapping(\"/{id}\")\n    public ResponseEntity<Product> getSingleProduct(@PathVariable(\"id\") Long productId) {\n        try {\n//            JwtObject authTokenObj = null;\n//            if(authToken != null) {\n//                Optional<JwtObject> authObjectOptional = tokenValidator.validateToken(authToken);\n//                if(authObjectOptional.isEmpty()) {\n//                    // throw exception\n//                }\n//                authTokenObj = authObjectOptional.get();\n//            }\n//            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();\n//            headers.add(\"Accept\", \"application/json\");\n//            headers.add(\"Content-Type\", \"application/json\");\n//            headers.add(\"auth-token\", \"heyaccess\");\n            // Apply rule based user Roles\n            // Product product = this.productService.getSingleProduct(productId, authTokenObj);\n\n            Product product = this.productService.getSingleProduct(productId);\n            if(productId < 1) {\n                throw new IllegalArgumentException(\"Something went wrong\");\n            }\n            ResponseEntity<Product> responseEntity = new ResponseEntity<>(product, HttpStatus.OK);\n            return responseEntity;\n        } catch (Exception e) {\n            //ResponseEntity<Product> responseEntity = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);\n            //return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // 500 error code\n            throw e;\n        }\n    }\n\n    @PostMapping()\n    public ResponseEntity<Product> addNewProduct(@RequestBody ProductDto productDto) {\n        Product product = getProduct(productDto);\n        Product savedproduct = this.productService.addNewProduct(product);\n        ResponseEntity<Product> responseEntity = new ResponseEntity<>(savedproduct, HttpStatus.OK);\n        return responseEntity;\n    }\n\n    @PutMapping(\"/{productId}\")\n    public String updateProduct(@PathVariable(\"productId\") Long productId) {\n        return \"Updating product\";\n    }\n\n    @PatchMapping(\"/{productId}\")\n    public Product patchProduct(@PathVariable(\"productId\") Long productId, @RequestBody ProductDto productDto) {\n\n        Product product = new Product();\n        product.setId(productDto.getId());\n        product.setCategory(new Categories());\n        product.getCategory().setName(productDto.getCategory());\n        product.setTitle(productDto.getTitle());\n        product.setPrice(productDto.getPrice());\n        product.setDescription(productDto.getDescription());\n        return this.productService.updateProduct(productId, product);\n    }\n\n    @DeleteMapping(\"/{productId}\")\n    public String deleteProduct(@PathVariable(\"productId\") Long productId) {\n        return \"Deleting a product with id: \" + productId;\n    }\n\n    //@ExceptionHandler({NullPointerException.class, IllegalArgumentException.class})\n    public ResponseEntity<String> handleException(Exception e) {\n        return new ResponseEntity<>(\"Something went south, need to check\", HttpStatus.INTERNAL_SERVER_ERROR);\n    }\n\n    private Product getProduct(ProductDto productDto) {\n        Product product = new Product();\n        product.setId(productDto.getId());\n        product.setTitle(productDto.getTitle());\n        product.setPrice(productDto.getPrice());\n        Categories category = new Categories();\n        category.setName(productDto.getCategory());\n        product.setCategory(category);\n        product.setImageUrl(productDto.getImage());\n        product.setDescription(productDto.getDescription());\n        return product;\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/example/productservice_proxy/Controllers/ProductController.java b/main/java/com/example/productservice_proxy/Controllers/ProductController.java
+--- a/main/java/com/example/productservice_proxy/Controllers/ProductController.java	(revision 4c15c1e3d79df55ca70acb64d8b5bb5d190b172d)
++++ b/main/java/com/example/productservice_proxy/Controllers/ProductController.java	(date 1706543489786)
+@@ -10,7 +10,6 @@
+ import org.apache.coyote.Response;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+-import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.beans.factory.annotation.Qualifier;
+ import org.springframework.http.HttpStatus;
+ import org.springframework.http.ResponseEntity;
+@@ -29,9 +28,7 @@
+     Logger logger = LoggerFactory.getLogger(ProductController.class);
+ 
+     IProductService productService;
+-
+     TokenValidator tokenValidator;
+-
+     public ProductController(IProductService productService, TokenValidator tokenValidator) {
+         this.productService = productService;
+         this.tokenValidator = tokenValidator;
+@@ -108,7 +105,7 @@
+ 
+     //@ExceptionHandler({NullPointerException.class, IllegalArgumentException.class})
+     public ResponseEntity<String> handleException(Exception e) {
+-        return new ResponseEntity<>("Something went south, need to check", HttpStatus.INTERNAL_SERVER_ERROR);
++        return new ResponseEntity<>("Kuch toh phata hai", HttpStatus.INTERNAL_SERVER_ERROR);
+     }
+ 
+     private Product getProduct(ProductDto productDto) {
