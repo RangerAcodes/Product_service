@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ProductRepositoryTest {
 
     @Autowired
-    private ProductRepository productRepository;
+    private ProductRepo productRepository;
     @Autowired
     private CategoryRepo categoryRepo;
 

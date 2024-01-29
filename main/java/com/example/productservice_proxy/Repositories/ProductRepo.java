@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepo extends JpaRepository<Product, Long> {
     Product save(Product product); // (save) is a method of JpaRepository (interface)
 
     Product findProductById(Long Id);
@@ -22,4 +22,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     List<Product> findAllByIsPublicFalse();
     List<Product> findByTitleEquals(String title, Pageable pageable);
+
+    //void deleteProductById(Long id);
 }
+
+

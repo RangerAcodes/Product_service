@@ -1,28 +1,33 @@
 package com.example.productservice_proxy.services;
 
 import com.example.productservice_proxy.Models.Product;
-import com.example.productservice_proxy.Repositories.ProductElasticSearchRepository;
-import com.example.productservice_proxy.Repositories.ProductRepository;
+import com.example.productservice_proxy.Repositories.ProductSearchRepo;
+import com.example.productservice_proxy.Repositories.ProductRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Primary
-@Service
+//@Primary
+//@Service
 public class SelfProductService implements IProductService{
-    ProductRepository productRepository;
-    ProductElasticSearchRepository productElasticSearchRepository;
+
+    ProductRepo productRepo;
+    ProductSearchRepo productElasticSearchRepo;
 
 
-    public SelfProductService(ProductRepository productRepository, ProductElasticSearchRepository productElasticSearchRepository) {
-        this.productRepository = productRepository;
-        this.productElasticSearchRepository = productElasticSearchRepository;
+    public SelfProductService(ProductRepo productRepo, ProductSearchRepo productElasticSearchRepo
+        )
+
+        {
+        this.productRepo = productRepo;
+        this.productElasticSearchRepo = productElasticSearchRepo;
 
     }
     @Override
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        return productRepo.findAll();
     }
 
     @Override
@@ -32,8 +37,8 @@ public class SelfProductService implements IProductService{
 
     @Override
     public Product addNewProduct(Product product) {
-        this.productRepository.save(product);
-        this.productElasticSearchRepository.save(product);
+        this.productRepo.save(product);
+        this.productElasticSearchRepo.save(product);
         return product;
     }
 
