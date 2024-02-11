@@ -4,7 +4,83 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on." />
+    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_24,_8_49 pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_24__8_49pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/CategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/ExceptionAdvices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Controllers/SearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/DTOs/ProductDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/DTOs/RatingDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/DTOs/SearchRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/InheritanceExamples/SingleClass/Instructor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/InheritanceExamples/SingleClass/Mentor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/InheritanceExamples/SingleClass/TA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/InheritanceExamples/SingleClass/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Instructor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Mentor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/InheritanceExamples/TablePerClass/TA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/InheritanceExamples/TablePerClass/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Main2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Models/BaseModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Models/Categories.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Models/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Models/Something.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Models/SortParam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Repositories/CategoryRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Repositories/ProductElasticSearchRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Repositories/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Security/CustomJwtAuthenticationConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Security/JwtObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Security/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Security/SpringSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/Security/TokenValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/clients/IClientProductDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/clients/fakestore/client/FakeStoreClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/clients/fakestore/dto/FakeStoreProductDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/IProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/SearchService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/productservice_proxy/services/SelfProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Controllers/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/BaseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Categories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Something.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Something.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/SortParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/SortParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/CategoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/CategoryRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/ProductSearchRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ElasticsearchRepo/ProductElasticSearchRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/config/ElasticsearchConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SelfProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SelfProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/SearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/BaseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/BaseModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Categories.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Categories.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Something.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Something.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/SortParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/SortParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/CategoryRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/CategoryRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/ProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/ProductRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/ProductSearchRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/FakeStoreProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/FakeStoreProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SearchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SearchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SelfProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SelfProductService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +95,7 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src" />
     <option name="ROOT_SYNC" value="SYNC" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
@@ -36,6 +112,9 @@
         <option name="url" value="https://github.com/RangerAcodes/ProductService_proxy.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -54,24 +133,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ProductServiceProxyApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ProductServiceProxyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -81,13 +169,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-20.0.2-corretto-20.0.2.1-f644763e9732-447c96ba" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -115,8 +196,27 @@
       <updated>1706542583643</updated>
       <workItem from="1706542590865" duration="958000" />
       <workItem from="1706546460293" duration="46000" />
+      <workItem from="1706546512366" duration="496000" />
+      <workItem from="1706547019423" duration="9048000" />
+      <workItem from="1707571627768" duration="12512000" />
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
+      <option name="closed" value="true" />
+      <created>1706546648000</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706546648000</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
+      <option name="closed" value="true" />
+      <created>1706546678283</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706546678283</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,5 +236,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on." />
     <option name="LAST_COMMIT_MESSAGE" value="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="com.microsoft.sqlserver.jdbc.SQLServerException" package="com.microsoft.sqlserver.jdbc" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Controllers/SearchController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
