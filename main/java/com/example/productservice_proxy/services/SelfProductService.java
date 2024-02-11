@@ -1,33 +1,26 @@
 package com.example.productservice_proxy.services;
 
 import com.example.productservice_proxy.Models.Product;
-import com.example.productservice_proxy.Repositories.ProductSearchRepo;
+import com.example.productservice_proxy.ElasticsearchRepo.ProductElasticSearchRepo;
 import com.example.productservice_proxy.Repositories.ProductRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-//@Primary
-//@Service
-public class SelfProductService implements IProductService{
+@Service
+public class SelfProductService implements IProductService {
 
     ProductRepo productRepo;
-    ProductSearchRepo productElasticSearchRepo;
+    ProductElasticSearchRepo productElasticSearchRepo;
 
-
-    public SelfProductService(ProductRepo productRepo, ProductSearchRepo productElasticSearchRepo
-        )
-
-        {
+    public SelfProductService(ProductRepo productRepo,
+                              ProductElasticSearchRepo productElasticSearchRepo) {
         this.productRepo = productRepo;
         this.productElasticSearchRepo = productElasticSearchRepo;
-
     }
     @Override
     public List<Product> getAllProducts() {
-        return productRepo.findAll();
+        return null;
     }
 
     @Override
@@ -51,5 +44,4 @@ public class SelfProductService implements IProductService{
     public String deleteProduct(Long productId) {
         return null;
     }
-
 }

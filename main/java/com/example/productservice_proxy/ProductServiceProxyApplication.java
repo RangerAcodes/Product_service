@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 
-@SpringBootApplication
+@SpringBootApplication //(scanBasePackages = {"com.example.productservice_proxy", "com.example.productservice_proxy.Repositories"})
 public class ProductServiceProxyApplication {
 
     public static void main(String[] args) {

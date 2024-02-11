@@ -6,7 +6,9 @@ import com.example.productservice_proxy.Models.Product;
 import com.example.productservice_proxy.clients.IClientProductDto;
 import com.example.productservice_proxy.clients.fakestore.client.FakeStoreClient;
 import com.example.productservice_proxy.clients.fakestore.dto.FakeStoreProductDto;
-import io.micrometer.common.lang.Nullable;
+
+
+import jakarta.annotation.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Primary;
@@ -22,6 +24,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
+//@Service
 @Primary
 @Service
 public class FakeStoreProductService implements IProductService {
@@ -32,7 +35,8 @@ public class FakeStoreProductService implements IProductService {
     @Autowired
     public FakeStoreProductService(RestTemplateBuilder restTemplateBuilder, FakeStoreClient fakeStoreClient) {
         this.restTemplateBuilder = restTemplateBuilder;
-        this.fakeStoreClient = fakeStoreClient;}
+        this.fakeStoreClient = fakeStoreClient;
+    }
 
     private <T> ResponseEntity<T> requestForEntity(HttpMethod httpMethod, String url, @Nullable Object request,
                                                    Class<T> responseType, Object... uriVariables) throws RestClientException {
@@ -44,15 +48,15 @@ public class FakeStoreProductService implements IProductService {
         return restTemplate.execute(url, httpMethod, requestCallback, responseExtractor, uriVariables);
     }
 
-
     @Override
     public List<Product> getAllProducts() {
-
 //        RestTemplate restTemplate = restTemplateBuilder.build();
-//        ResponseEntity<ProductDto[]> productDtos = restTemplate.getForEntity("https://fakestoreapi.com/products", ProductDto[].class);
-        
-        List<FakeStoreProductDto> fakeStoreProductDtos = fakeStoreClient.getAllProducts();
-        List<Product> answer = new ArrayList<>();
+//        ResponseEntity<ProductDto[]> productDtos =
+//                restTemplate
+//                        .getForEntity("https://fakestoreapi.com/products", ProductDto[].class);
+//
+
+        List<FakeStoreProductDto> fakeStoreProductDtos = fakeStoreClient.getAllProducts();        List<Product> answer = new ArrayList<>();
 
         for (FakeStoreProductDto productDto: fakeStoreProductDtos) {
             Product product = new Product();
@@ -70,34 +74,32 @@ public class FakeStoreProductService implements IProductService {
 
 
     @Override
-    public Product getSingleProduct(Long productId) {
-        RestTemplate restTemplate = restTemplateBuilder.build();
-        ResponseEntity<FakeStoreProductDto> productDto =
-                restTemplate.getForEntity("https://fakestoreapi.com/products/{id}",
-                        FakeStoreProductDto.class, productId);
+    public Product getSingleProduct(Long productId ) {
 
-        Product product = getProduct(productDto.getBody());
+//        RestTemplate restTemplate = restTemplateBuilder.build();
+//        ResponseEntity<FakeStoreProductDto> productDto =
+//                restTemplate.getForEntity("https://fakestoreapi.com/products/{id}",
+//                        FakeStoreProductDto.class, productId);
+        //FakeStoreProductDto fs = fakeStoreClient.getSingleProduct(productId);
+        // Product product = getProduct(productDto.getBody());
 
-        return product;
+        return new Product();
     }
 
 //    @Override
 //    public Product addNewProduct(IClientProductDto productDto) {
-//        RestTemplate restTemplate = restTemplateBuilder.build();
-//        restTemplate.postForEntity("https://fakestoreapi.com/products",productDto,ProductDto.class);
-//
-//        //saving data for db
-//
+//        RestTemplate restTemplate= restTemplateBuilder.build();
+//        //restTemplate.postForEntity("https://fakestoreapi.com/products", productDto, ProductDto.class);
+//        // saving the data for db
 //        Product product = getProduct((FakeStoreProductDto) productDto);
 //        return product;
-//
-//        //return null;
 //    }
 
     @Override
-    public Product addNewProduct(Product product){
+    public Product addNewProduct(Product product) {
         return null;
     }
+
 
     @Override
     public Product updateProduct(Long productId, Product product) {
@@ -140,5 +142,4 @@ public class FakeStoreProductService implements IProductService {
         product.setDescription(productDto.getDescription());
         return product;
     }
-
 }

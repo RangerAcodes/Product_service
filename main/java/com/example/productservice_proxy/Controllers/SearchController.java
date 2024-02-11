@@ -5,8 +5,9 @@ import com.example.productservice_proxy.DTOs.SearchRequestDto;
 import com.example.productservice_proxy.Models.Categories;
 import com.example.productservice_proxy.Models.Product;
 import com.example.productservice_proxy.services.SearchService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.SearchStrategy;
+
+
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,20 +21,24 @@ import java.util.List;
 public class SearchController {
     SearchService searchService;
 
-    public SearchController (SearchService searchService){
+    public SearchController(SearchService searchService) {
         this.searchService = searchService;
     }
 
     @PostMapping
-    public List<ProductDto> searchProducts(@RequestBody SearchRequestDto searchRequestDto){
+    public List<ProductDto> searchProducts(@RequestBody SearchRequestDto searchRequestDto) {
         List<Product> result = searchService.searchProducts(searchRequestDto.getQuery(),
-                searchRequestDto.getPageNumber(),searchRequestDto.getSizeOfPage(), searchRequestDto.getSortParamList());
+                searchRequestDto.getPageNumber(), searchRequestDto.getSizeOfPage(), searchRequestDto.getSortParamList());
         List<ProductDto> shareableResult = new LinkedList<>();
-        for(Product product: result){
+        for(Product product : result) {
             shareableResult.add(getProduct(product));
         }
         return shareableResult;
+//        List<Product> result = searchService.searchProducts(searchRequestDto.getQuery(),
+//                searchRequestDto.getPageNumber(), searchRequestDto.getSizeOfPage());
+//        return result;
     }
+
     private ProductDto getProduct(Product p) {
         ProductDto product = new ProductDto();
         product.setId(p.getId());
@@ -41,4 +46,5 @@ public class SearchController {
         product.setPrice(p.getPrice());
         return product;
     }
+
 }

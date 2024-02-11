@@ -21,15 +21,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 //This controller will always answer products
-// This controller will always answer products
+
 @RestController
 @RequestMapping("/products")
 public class ProductController {
 
-    Logger logger = LoggerFactory.getLogger(ProductController.class);
-
     IProductService productService;
-
     TokenValidator tokenValidator;
 
     public ProductController(IProductService productService, TokenValidator tokenValidator) {
@@ -39,7 +36,6 @@ public class ProductController {
 
     @GetMapping("")
     public ResponseEntity<List<Product>> getAllProducts() {
-        logger.error("This is an error message");
         return new ResponseEntity<>(this.productService.getAllProducts(), HttpStatus.OK);
     }
 
@@ -61,7 +57,6 @@ public class ProductController {
 //            headers.add("auth-token", "heyaccess");
             // Apply rule based user Roles
             // Product product = this.productService.getSingleProduct(productId, authTokenObj);
-
             Product product = this.productService.getSingleProduct(productId);
             if(productId < 1) {
                 throw new IllegalArgumentException("Something went wrong");
@@ -108,7 +103,7 @@ public class ProductController {
 
     //@ExceptionHandler({NullPointerException.class, IllegalArgumentException.class})
     public ResponseEntity<String> handleException(Exception e) {
-        return new ResponseEntity<>("Something went south, need to check", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Kuch toh phat hai", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     private Product getProduct(ProductDto productDto) {

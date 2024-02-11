@@ -1,6 +1,7 @@
 package com.example.productservice_proxy.Repositories;
 
 import com.example.productservice_proxy.Models.Categories;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

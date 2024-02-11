@@ -1,5 +1,6 @@
 package com.example.productservice_proxy.Models;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
