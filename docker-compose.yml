@@ -1,11 +1,16 @@
-version: '3'
-services:
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.1
-    container_name: elasticsearch
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    ports:
-      - 9200:9200
+#version: '3'
+#services:
+#  elasticsearch:
+##    reactive:
+##      endpoints: localhost:9200
+##      username: elastic
+##      password: 7mboHabHe5-Uq8otS76X
+#    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.4
+#    container_name: es01
+#    environment:
+#      - discovery.type=single-node
+#      - xpack.security.enabled=false
+#      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+#    ports:
+#      - 9200:9200
+#    network_mode: "host"

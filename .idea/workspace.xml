@@ -4,13 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Added a local ES Server on Docker Container">
+    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="adding @ElasticsearchRepository annotation">
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/config/elasticConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src" beforeDir="false" afterPath="$PROJECT_DIR$/src" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SelfProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SelfProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ExceptionAdvices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ExceptionAdvices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/SearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/ProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/ProductDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/RatingDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/RatingDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/SearchRequestDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/SearchRequestDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/ElasticsearchRepo/ProductElasticSearchRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/ElasticsearchRepo/ProductElasticSearchRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/Instructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/Instructor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/Mentor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/Mentor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/TA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/TA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Instructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Instructor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Mentor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Mentor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/TA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/TA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Main2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Main2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/BaseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/BaseModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Categories.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Categories.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Something.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Something.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/SortParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/SortParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/ProductServiceProxyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/ProductServiceProxyApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/CategoryRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/CategoryRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/ProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/ProductRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/CustomJwtAuthenticationConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/CustomJwtAuthenticationConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/JwtObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/JwtObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/SpringSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/SpringSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/TokenValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/TokenValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/IClientProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/IClientProductDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/fakestore/client/FakeStoreClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/fakestore/client/FakeStoreClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/fakestore/dto/FakeStoreProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/fakestore/dto/FakeStoreProductDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/FakeStoreProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/FakeStoreProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/IProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/IProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SearchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SearchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SelfProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SelfProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Controllers/ProductControllerMVCTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Controllers/ProductControllerMVCTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Controllers/ProductControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Controllers/ProductControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/FakeStoreProductServiceProxyApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/FakeStoreProductServiceProxyApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Repositories/ProductRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Repositories/ProductRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Testing/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Testing/CalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="main/main" />
@@ -39,6 +107,10 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/lib/src.zip!/java.base/java/io/IOException.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/client/elasticsearch-rest-client/8.10.4/elasticsearch-rest-client-8.10.4.jar!/org/elasticsearch/client/RestClient.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
@@ -47,6 +119,9 @@
 }</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -70,17 +145,44 @@
     "Spring Boot.ProductServiceProxyApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ranger/Desktop/iRobot/Projects/Product_Service/ProductService_proxy",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/l_/8qxnbwcd0sq_hbz3dkc73ws80000gn/T/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="bc4fc05b-36ae-4964-8e10-15f902eebfee" />
+        <option name="reportName" value="ProductService_proxy/qodana/2024-05-12" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/l_/8qxnbwcd0sq_hbz3dkc73ws80000gn/T/qodana_output/qodana.sarif.json" reportGuid="bc4fc05b-36ae-4964-8e10-15f902eebfee" reportId="ProductService_proxy/qodana/2024-05-12" />
+    </option>
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -95,6 +197,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -124,7 +234,18 @@
       <workItem from="1706546460293" duration="46000" />
       <workItem from="1706546512366" duration="496000" />
       <workItem from="1706547019423" duration="9048000" />
-      <workItem from="1707571627768" duration="13184000" />
+      <workItem from="1707571627768" duration="15940000" />
+      <workItem from="1709027081182" duration="7641000" />
+      <workItem from="1709188502978" duration="437000" />
+      <workItem from="1712579935336" duration="472000" />
+      <workItem from="1712836470250" duration="129000" />
+      <workItem from="1712836613151" duration="181000" />
+      <workItem from="1712909019830" duration="803000" />
+      <workItem from="1715433254704" duration="123000" />
+      <workItem from="1715433560001" duration="2309000" />
+      <workItem from="1715442009952" duration="342000" />
+      <workItem from="1715442641718" duration="613000" />
+      <workItem from="1715449570568" duration="57282000" />
     </task>
     <task id="LOCAL-00003" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
       <option name="closed" value="true" />
@@ -150,7 +271,31 @@
       <option name="project" value="LOCAL" />
       <updated>1707667072930</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added a local ES Server on Docker Container">
+      <option name="closed" value="true" />
+      <created>1707667233275</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707667233275</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added a local ES Server on Docker Container">
+      <option name="closed" value="true" />
+      <created>1707667302387</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707667302387</updated>
+    </task>
+    <task id="LOCAL-00008" summary="adding @ElasticsearchRepository annotation">
+      <option name="closed" value="true" />
+      <created>1709114347099</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709114347100</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +315,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on." />
     <MESSAGE value="Added a local ES Server on Docker Container" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a local ES Server on Docker Container" />
+    <MESSAGE value="adding @ElasticsearchRepository annotation" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding @ElasticsearchRepository annotation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -179,12 +325,19 @@
           <properties class="com.microsoft.sqlserver.jdbc.SQLServerException" package="com.microsoft.sqlserver.jdbc" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Controllers/SearchController.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.apache.http.ConnectionClosedException" package="org.apache.http" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.apache.hc.client5.http.HttpHostConnectException" package="org.apache.hc.client5.http" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
