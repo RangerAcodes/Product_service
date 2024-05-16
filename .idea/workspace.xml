@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="adding @ElasticsearchRepository annotation">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/config/elasticConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src" beforeDir="false" afterPath="$PROJECT_DIR$/src" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" afterDir="false" />
@@ -23,50 +16,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SelfProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SelfProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/CategoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ExceptionAdvices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ExceptionAdvices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Controllers/SearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/ProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/ProductDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/RatingDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/RatingDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/SearchRequestDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/DTOs/SearchRequestDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/ElasticsearchRepo/ProductElasticSearchRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/ElasticsearchRepo/ProductElasticSearchRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/Instructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/Instructor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/Mentor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/Mentor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/TA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/TA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/SingleClass/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Instructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Instructor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Mentor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/Mentor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/TA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/TA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/InheritanceExamples/TablePerClass/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Main2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Main2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/BaseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/BaseModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Categories.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Categories.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Something.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/Something.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/SortParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Models/SortParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/ProductServiceProxyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/ProductServiceProxyApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/CategoryRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/CategoryRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/ProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Repositories/ProductRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/CustomJwtAuthenticationConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/CustomJwtAuthenticationConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/JwtObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/JwtObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/SpringSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/SpringSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/TokenValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/Security/TokenValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/IClientProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/IClientProductDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/fakestore/client/FakeStoreClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/fakestore/client/FakeStoreClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/fakestore/dto/FakeStoreProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/clients/fakestore/dto/FakeStoreProductDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/FakeStoreProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/FakeStoreProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/IProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/IProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SearchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SearchService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SelfProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/productservice_proxy/services/SelfProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Controllers/ProductControllerMVCTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Controllers/ProductControllerMVCTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Controllers/ProductControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Controllers/ProductControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/FakeStoreProductServiceProxyApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/FakeStoreProductServiceProxyApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Repositories/ProductRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Repositories/ProductRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Testing/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/productservice_proxy/Testing/CalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,23 +112,6 @@
     ]
   }
 }]]></component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="/private/var/folders/l_/8qxnbwcd0sq_hbz3dkc73ws80000gn/T/qodana_output/qodana.sarif.json" />
-        <option name="reportGuid" value="bc4fc05b-36ae-4964-8e10-15f902eebfee" />
-        <option name="reportName" value="ProductService_proxy/qodana/2024-05-12" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/l_/8qxnbwcd0sq_hbz3dkc73ws80000gn/T/qodana_output/qodana.sarif.json" reportGuid="bc4fc05b-36ae-4964-8e10-15f902eebfee" reportId="ProductService_proxy/qodana/2024-05-12" />
-    </option>
-  </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -245,7 +177,7 @@
       <workItem from="1715433560001" duration="2309000" />
       <workItem from="1715442009952" duration="342000" />
       <workItem from="1715442641718" duration="613000" />
-      <workItem from="1715449570568" duration="57282000" />
+      <workItem from="1715449570568" duration="63930000" />
     </task>
     <task id="LOCAL-00003" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
       <option name="closed" value="true" />
