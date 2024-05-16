@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="adding @ElasticsearchRepository annotation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/config/elasticConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src" beforeDir="false" afterPath="$PROJECT_DIR$/src" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/ProductServiceProxyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Repositories/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/FakeStoreProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SelfProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/services/SelfProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/productservice_proxy/Repositories/ProductRepositoryTest.java" afterDir="false" />
+    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Changes to the src directory and elastic search.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +38,12 @@
     &quot;assignee&quot;: &quot;RangerAcodes&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="1131464a-0eac-465c-8150-18ca95599c38" />
-        <option name="url" value="https://github.com/RangerAcodes/ProductService_proxy.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:RangerAcodes/Product_service.git",
+    "accountId": "a2286097-9675-4483-af76-adc733c7fd7a"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/lib/src.zip!/java.base/java/io/IOException.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/client/elasticsearch-rest-client/8.10.4/elasticsearch-rest-client-8.10.4.jar!/org/elasticsearch/client/RestClient.class" root0="SKIP_INSPECTION" />
@@ -176,7 +165,7 @@
       <workItem from="1715433560001" duration="2309000" />
       <workItem from="1715442009952" duration="342000" />
       <workItem from="1715442641718" duration="613000" />
-      <workItem from="1715449570568" duration="64909000" />
+      <workItem from="1715449570568" duration="66228000" />
     </task>
     <task id="LOCAL-00003" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
       <option name="closed" value="true" />
@@ -226,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709114347100</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Changes to the src directory and elastic search.">
+      <option name="closed" value="true" />
+      <created>1715850656896</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715850656896</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +244,8 @@
     <MESSAGE value="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on." />
     <MESSAGE value="Added a local ES Server on Docker Container" />
     <MESSAGE value="adding @ElasticsearchRepository annotation" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding @ElasticsearchRepository annotation" />
+    <MESSAGE value="Changes to the src directory and elastic search." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to the src directory and elastic search." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
