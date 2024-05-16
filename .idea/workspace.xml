@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="adding @ElasticsearchRepository annotation">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6d033697-f77f-4514-867f-1eca6ac91305.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6d033697-f77f-4514-867f-1eca6ac91305/storage_v2/_src_/schema/project.GUuQ7Q.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/config/elasticConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src" beforeDir="false" afterPath="$PROJECT_DIR$/src" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/Models/Product.java" afterDir="false" />
@@ -38,7 +41,7 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
@@ -177,7 +180,7 @@
       <workItem from="1715433560001" duration="2309000" />
       <workItem from="1715442009952" duration="342000" />
       <workItem from="1715442641718" duration="613000" />
-      <workItem from="1715449570568" duration="63930000" />
+      <workItem from="1715449570568" duration="64596000" />
     </task>
     <task id="LOCAL-00003" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
       <option name="closed" value="true" />
