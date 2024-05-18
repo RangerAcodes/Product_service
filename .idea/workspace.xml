@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Changes to the src directory and elastic search.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/config/elasticConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/productservice_proxy/config/elasticConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +39,12 @@
     &quot;assignee&quot;: &quot;RangerAcodes&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:RangerAcodes/Product_service.git",
-    "accountId": "a2286097-9675-4483-af76-adc733c7fd7a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:RangerAcodes/Product_service.git&quot;,
+    &quot;accountId&quot;: &quot;a2286097-9675-4483-af76-adc733c7fd7a&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/lib/src.zip!/java.base/java/io/IOException.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/client/elasticsearch-rest-client/8.10.4/elasticsearch-rest-client-8.10.4.jar!/org/elasticsearch/client/RestClient.class" root0="SKIP_INSPECTION" />
@@ -80,7 +81,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ProductServiceProxyApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "<unknown>",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ranger/Desktop/iRobot/Projects/Product_Service/ProductService_proxy",
     "node.js.detected.package.eslint": "true",
