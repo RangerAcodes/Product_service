@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Changes to the src directory and elastic search.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Changes to the src directory and elastic search." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,7 +165,7 @@
       <workItem from="1715442641718" duration="613000" />
       <workItem from="1715449570568" duration="66228000" />
       <workItem from="1716535911083" duration="10477000" />
-      <workItem from="1716672693506" duration="13325000" />
+      <workItem from="1716672693506" duration="13809000" />
     </task>
     <task id="LOCAL-00003" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
       <option name="closed" value="true" />
