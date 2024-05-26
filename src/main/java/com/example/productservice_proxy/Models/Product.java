@@ -1,5 +1,6 @@
 package com.example.productservice_proxy.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -18,6 +19,7 @@ public class Product extends BaseModel{
     private double price;
     private String description;
     @ManyToOne(cascade= CascadeType.ALL)
+    @JsonManagedReference
     private Categories category;
     private String imageUrl;
     private Boolean isPublic;

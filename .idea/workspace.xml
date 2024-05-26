@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Changes to the src directory and elastic search.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109/storage_v2/_src_/database/ProductServiceProxy.KPevgA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109/storage_v2/_src_/database/ProductServiceProxy.KPevgA/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109/storage_v2/_src_/database/ProductServiceProxy.KPevgA/schema/dbo.sYMBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109/storage_v2/_src_/database/ProductServiceProxy.KPevgA/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +45,12 @@
     &quot;assignee&quot;: &quot;RangerAcodes&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:RangerAcodes/ProductService.git",
-    "accountId": "a2286097-9675-4483-af76-adc733c7fd7a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/RangerAcodes/Product_service.git&quot;,
+    &quot;accountId&quot;: &quot;a2286097-9675-4483-af76-adc733c7fd7a&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/lib/src.zip!/java.base/java/io/IOException.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/client/elasticsearch-rest-client/8.10.4/elasticsearch-rest-client-8.10.4.jar!/org/elasticsearch/client/RestClient.class" root0="SKIP_INSPECTION" />
@@ -80,7 +87,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.ProductServiceProxyApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;&lt;unknown&gt;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/ranger/Desktop/iRobot/Projects/Product_Service/ProductService_proxy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -166,6 +173,8 @@
       <workItem from="1715442009952" duration="342000" />
       <workItem from="1715442641718" duration="613000" />
       <workItem from="1715449570568" duration="66228000" />
+      <workItem from="1716535911083" duration="10477000" />
+      <workItem from="1716672693506" duration="11711000" />
     </task>
     <task id="LOCAL-00003" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
       <option name="closed" value="true" />
@@ -234,7 +243,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

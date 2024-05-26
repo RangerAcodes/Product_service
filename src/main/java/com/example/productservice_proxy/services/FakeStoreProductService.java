@@ -65,7 +65,8 @@ public class FakeStoreProductService implements IProductService {
 //                        .getForEntity("https://fakestoreapi.com/products", ProductDto[].class);
 //
 
-        List<FakeStoreProductDto> fakeStoreProductDtos = fakeStoreClient.getAllProducts();        List<Product> answer = new ArrayList<>();
+        List<FakeStoreProductDto> fakeStoreProductDtos = fakeStoreClient.getAllProducts();
+        List<Product> answer = new ArrayList<>();
 
         for (FakeStoreProductDto productDto: fakeStoreProductDtos) {
             Product product = new Product();
@@ -140,7 +141,7 @@ public class FakeStoreProductService implements IProductService {
         return null;
     }
 
-    private Product getProduct(FakeStoreProductDto productDto) {
+    public Product getProduct(FakeStoreProductDto productDto) {
         Product product = new Product();
         product.setId(productDto.getId());
         product.setTitle(productDto.getTitle());

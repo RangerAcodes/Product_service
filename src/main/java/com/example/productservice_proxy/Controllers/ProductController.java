@@ -7,6 +7,7 @@ import com.example.productservice_proxy.Models.Product;
 import com.example.productservice_proxy.Security.TokenValidator;
 import com.example.productservice_proxy.clients.IClientProductDto;
 import com.example.productservice_proxy.services.IProductService;
+import jakarta.persistence.EntityNotFoundException;
 import org.apache.coyote.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +18,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 //This controller will always answer products
@@ -28,45 +28,44 @@ public class ProductController {
 
     IProductService productService;
     TokenValidator tokenValidator;
-
+    ProductDto productDto;
     public ProductController(IProductService productService, TokenValidator tokenValidator) {
         this.productService = productService;
         this.tokenValidator = tokenValidator;
     }
+
+    private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     @GetMapping("")
     public ResponseEntity<List<Product>> getAllProducts() {
         return new ResponseEntity<>(this.productService.getAllProducts(), HttpStatus.OK);
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity<Product> getSingleProduct(@PathVariable("id") Long productId) {
+        logger.debug("Received request for product with ID: {}", productId);
         try {
-//            JwtObject authTokenObj = null;
-//            if(authToken != null) {
-//                Optional<JwtObject> authObjectOptional = tokenValidator.validateToken(authToken);
-//                if(authObjectOptional.isEmpty()) {
-//                    // throw exception
-//                }
-//                authTokenObj = authObjectOptional.get();
-//            }
-//            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-//            headers.add("Accept", "application/json");
-//            headers.add("Content-Type", "application/json");
-//            headers.add("auth-token", "heyaccess");
-            // Apply rule based user Roles
-            // Product product = this.productService.getSingleProduct(productId, authTokenObj);
-            Product product = this.productService.getSingleProduct(productId);
-            if(productId < 1) {
-                throw new IllegalArgumentException("Something went wrong");
+            if (productId < 1) {
+                throw new IllegalArgumentException("Invalid product ID");
             }
-            ResponseEntity<Product> responseEntity = new ResponseEntity<>(product, HttpStatus.OK);
-            return responseEntity;
+            Product product = productService.getSingleProduct(productId);
+
+            //ProductDto productDto = productService.getSingleProduct(productId);
+
+            logger.debug("Returning product with ID: {}", productId);
+            return new ResponseEntity<>(product, HttpStatus.OK);
+
+        } catch (EntityNotFoundException e) {
+            logger.error("Product with ID: {} not found", productId);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404 error code
+
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid product ID: {}", productId);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST); // 400 error code
+
         } catch (Exception e) {
-            //ResponseEntity<Product> responseEntity = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-            //return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // 500 error code
-            throw e;
+            logger.error("Internal server error for product ID: {}", productId, e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // 500 error code
         }
     }
 
@@ -118,4 +117,43 @@ public class ProductController {
         product.setDescription(productDto.getDescription());
         return product;
     }
+
+
+    //@GetMapping("/{id}")
+//    public ResponseEntity<Product> getSingleProduct(@PathVariable("id") Long productId) {
+//        try {
+//            if(productId < 1) {
+//                throw new IllegalArgumentException("Something went wrong");
+//            }
+//            else {
+////            JwtObject authTokenObj = null;
+////            if(authToken != null) {
+////                Optional<JwtObject> authObjectOptional = tokenValidator.validateToken(authToken);
+////                if(authObjectOptional.isEmpty()) {
+////                    // throw exception
+////                }
+////                authTokenObj = authObjectOptional.get();
+////            }
+////            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+////            headers.add("Accept", "application/json");
+////            headers.add("Content-Type", "application/json");
+////            headers.add("auth-token", "heyaccess");
+//            // Apply rule based user Roles
+//            // Product product = this.productService.getSingleProduct(productId, authTokenObj);
+//
+////            if(productId < 1) {
+////                throw new IllegalArgumentException("Something went wrong");
+////            }
+//            return new ResponseEntity<>(productService.getSingleProduct(productId), HttpStatus.OK);
+//            //Product product = this.productService.getSingleProduct(productId);
+//            //ResponseEntity<Product> responseEntity = new ResponseEntity<>(product, HttpStatus.OK);
+//            //return responseEntity;
+//            }
+//
+//        } catch (Exception e) {
+//            //ResponseEntity<Product> responseEntity = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//            //return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // 500 error code
+//            throw e;
+//        }
+//    }
 }

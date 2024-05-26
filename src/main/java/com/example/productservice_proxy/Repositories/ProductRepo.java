@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long> {
@@ -16,12 +17,13 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
     @Override
     Product save(Product product); // (save) is a method of JpaRepository (interface)
 
-    Product findProductById(Long Id);
+    //Product findProductById(Long Id);
     Product findByPriceBetween(double greaterthan, double lessthan);
 
     //Product findByProductName(String productName);
 
     // String findTitleById(Long id);
+    Optional<Product> findById(Long id);
 
     List<Product> findByIdIsNotNullOrderByPrice();
 
