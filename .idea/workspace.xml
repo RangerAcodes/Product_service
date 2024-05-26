@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="325d8eb0-9527-47f7-9147-461ecdc0d711" name="Changes" comment="Changes to the src directory and elastic search.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109/storage_v2/_src_/database/ProductServiceProxy.KPevgA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109/storage_v2/_src_/database/ProductServiceProxy.KPevgA/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109/storage_v2/_src_/database/ProductServiceProxy.KPevgA/schema/dbo.sYMBAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fc86ad-ec2a-4ba6-ba8c-e12aa3195109/storage_v2/_src_/database/ProductServiceProxy.KPevgA/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +167,7 @@
       <workItem from="1715442641718" duration="613000" />
       <workItem from="1715449570568" duration="66228000" />
       <workItem from="1716535911083" duration="10477000" />
-      <workItem from="1716672693506" duration="11711000" />
+      <workItem from="1716672693506" duration="13325000" />
     </task>
     <task id="LOCAL-00003" summary="Implemented a few changes, corrected some bugs and updated the dependencies, some errors still prevalent which I am working on.">
       <option name="closed" value="true" />
